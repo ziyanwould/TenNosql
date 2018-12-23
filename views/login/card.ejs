@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>输入车牌号</title>
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+    <link rel="stylesheet" href="https:at.alicdn.com/t/font_975764_3r2oc75uoi.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/base.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- <link rel="stylesheet" href="mui/css/mui1.css"> -->
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="carLicenseBox">
+            <!-- <div class="carLicenseTitle">
+                请核对车牌号
+            </div> -->
+            <div class="nav">
+                首次使用需要绑定手机号
+            </div>
+            <div class="input">
+                
+                    <div class="child ">
+                        <div class="left">
+                           <i class="iconfont  icon-tongxinlu"></i>
+                        </div>
+                        <div class="right">
+                            <input class="weui-input name" type="text" placeholder="请输入你的姓名">
+                        </div>
+                    </div>
+                    <div class="child sex">
+                        <div class="left">
+                            <i class="iconfont  icon-xingbie"></i>
+                        </div>
+                        <div class="right">
+                           
+                          
+                            <div class="weui-cell__bd client-type">
+                                <span class="person" >
+                                    <a href="javascript:;" class="weui-icon-circle selected " data-type="1"></a>
+                                    <span class="user-type">男</span>
+                                </span>
+                                <span class="company">
+                                    <a href="javascript:;" class="weui-icon-circle" data-type="2"></a>
+                                    <span class="user-type">女</span>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+               
+            </div>
+
+            <div class="child che">
+                        <div class="left">
+                           <i class="iconfont  icon-che"></i>
+                        </div>
+                        <div class="right">
+                            请点击方框填写你的车牌
+                        </div>
+                    </div>
+            <div class="carLicenseMain">
+                <ul>
+                    <li class="active">粤</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li class="xinnengyuan"></li>
+                </ul>
+            </div>
+          
+            <div class="submitBtn" id="submitBtn">提交</div>
+        </div>
+        <div id="keyboardBox" style="display:none">
+            <div class="closeBox"><a href="javascript:;">关闭</a></div>
+            <div class="provienceBox" id="provienceBox">
+                <ul>
+                    <li>京</li>
+                    <li>津</li>
+                    <li>渝</li>
+                    <li>沪</li>
+                    <li>冀</li>
+                    <li>晋</li>
+                    <li>辽</li>
+                    <li>吉</li>
+                    <li>黑</li>
+                    <li>苏</li>
+                </ul>
+                <ul>
+                    <li>浙</li>
+                    <li>皖</li>
+                    <li>闽</li>
+                    <li>赣</li>
+                    <li>鲁</li>
+                    <li>豫</li>
+                    <li>鄂</li>
+                    <li>湘</li>
+                    <li>粤</li>
+                    <li>琼</li>
+                </ul>
+                <ul>
+                    <li>川</li>
+                    <li>贵</li>
+                    <li>云</li>
+                    <li>陕</li>
+                    <li>甘</li>
+                    <li>青</li>
+                    <li>蒙</li>
+                    <li>桂</li>
+                    <li>宁</li>
+                    <li>新</li>
+                </ul>
+                <ul>
+                    <li class="changeContentBtn other">ABC</li>
+                    <li>藏</li>
+                    <li>使</li>
+                    <li>领</li>
+                    <li>警</li>
+                    <li>学</li>
+                    <li>港</li>
+                    <li>澳</li>
+                    <li class="deleteBtn other">
+                        <img src="imgs/backDeleteImg.jpg" />
+                    </li>
+                </ul>
+            </div>
+            <div class="textBox" id="textBox">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>0</li>
+                </ul>
+                <ul>
+                    <li>Q</li>
+                    <li>W</li>
+                    <li>E</li>
+                    <li>R</li>
+                    <li>T</li>
+                    <li>Y</li>
+                    <li>U</li>
+                    <li>I</li>
+                    <li>O</li>
+                    <li>P</li>
+                </ul>
+                <ul>
+                    <li>A</li>
+                    <li>S</li>
+                    <li>D</li>
+                    <li>F</li>
+                    <li>G</li>
+                    <li>H</li>
+                    <li>J</li>
+                    <li>K</li>
+                    <li>L</li>
+                </ul>
+                <ul>
+                    <li class="changeContentBtn other">返回</li>
+                    <li>Z</li>
+                    <li>X</li>
+                    <li>C</li>
+                    <li>V</li>
+                    <li>B</li>
+                    <li>N</li>
+                    <li>M</li>
+                    <li class="deleteBtn other">
+                        <img src="imgs/backDeleteImg.jpg" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/layer.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $('.closeBox a').click(function(e){　　
+                　　
+                $('#keyboardBox').hide();
+              
+        })
+        $('body').click(function(e){　
+
+            $('#keyboardBox').hide();
+        })
+  
+        $('.carLicenseMain li').click(function(event){
+            event.stopPropagation();
+            $('#keyboardBox').show();
+        })
+        $('#keyboardBox').click(function(){
+            event.stopPropagation();
+        })
+        //提交表单
+        $('#submitBtn').click(function(){
+            var name =  $('.name').val();
+            var sex = $('.selected').closest('div').find('.user-type').html();
+            var xny = $('.carLicenseMain ul  li:last').html();
+            var chepaiShu = 0;
+            var s = ''//车牌号
+            $('.carLicenseMain li').each(function(index,ele){
+                var that = $(this);
+                // console.log('html',that.html(),index)
+                if(that.html()!=''){
+                    chepaiShu++;
+                    s+=that.html();
+                }
+                if(index==7){
+                    if(name==''){
+                        weui.alert('姓名不能为空', function () {
+                            console.log('ok');
+                            }, {
+                            title: '信息不完整'
+                        });
+                    }else if(chepaiShu<7){
+                        weui.alert('车牌号没有填写完整');//提示框
+                    }else if(xny!=''&& chepaiShu!=8){
+                        weui.alert('新能源车牌号没有填写完整');//提示框
+                    }
+                }
+            });
+          
+            console.log("表单信息",name,sex,xny,chepaiShu,s)
+      
+        })
+        
+        //模拟单选框
+        $('.weui-icon-circle').click(function(){
+            $('.weui-icon-circle').removeClass("selected");
+            $(this).addClass("selected");
+        })
+
+        var num = 6; //需要输入的车牌数
+        //切换键盘
+        $('.carLicenseMain ul li:first-of-type').click(function () {
+            $('#provienceBox').show();
+            $('#textBox').hide();
+        });
+        $('.carLicenseMain ul li:not(:first-of-type)').click(function () {
+            $('#textBox').show();
+            $('#provienceBox').hide();
+        });
+        $('.changeContentBtn').click(function () {
+            if ($(this).html() == 'ABC') {
+                $('#textBox').show();
+                $('#provienceBox').hide();
+            } else {
+                $('#textBox').hide();
+                $('#provienceBox').show();
+            }
+        })
+
+        //新能源点击事件
+        $('.xinnengyuan').click(function () {
+            num = 7;
+            $(this).removeClass('xinnengyuan');
+
+        })
+        //省份键盘点击事件
+        $('#provienceBox ul li:not(.other)').click(function () {
+            var self = this;
+            keyboard(num, self);
+        })
+        //文本键盘点击事件
+        $('#textBox ul li:not(.other)').click(function () {
+            var self = this;
+            keyboard(num, self);
+        })
+
+       // 修改功能
+        $('.carLicenseMain ul').find("li").click(function () {
+            $(this).addClass("active").siblings("li").removeClass("active");
+        }) 
+        //回退按钮点击事件
+        $('.deleteBtn').click(function () {
+ 
+            var index = getIndex();
+            if (index == num) {
+                if ($('.carLicenseMain ul li.active').html() != '') {
+                   // 
+                 
+                    if (index == 7) {
+                        $('.carLicenseMain ul li:last-of-type').addClass('xinnengyuan');
+                        num = 6;
+                    }
+                    $('.carLicenseMain ul li.active').html('');
+                    // add start 
+                    index--;
+                    $('.carLicenseMain ul li').eq(index).addClass("active").siblings("li").removeClass(
+                        "active");
+                    // add end
+             
+               }  else {
+                        if (index == 7) {
+                        $('.carLicenseMain ul li:last-of-type').addClass('xinnengyuan');
+                        num = 6;
+                    }
+                    $('.carLicenseMain ul li.active').html('');
+                    index--;
+                    $('.carLicenseMain ul li').eq(index).addClass("active").siblings("li").removeClass("active");
+                }
+
+            } else if ( index < num  && index > 0) {
+                if($('.carLicenseMain ul li.active').html() != ''){
+                    $('.carLicenseMain ul li.active').html('');
+                }else {
+                    index--;
+                    $('.carLicenseMain ul li').eq(index).addClass("active").siblings("li").removeClass(
+                        "active");
+                    $('.carLicenseMain ul li.active').html('');
+                    if (index == 0) {
+                        $('.carLicenseMain ul li.active').html('粤');//设置默认省
+                        $('#provienceBox').show();
+                        $('#textBox').hide();
+                    }
+                }
+            } else if (index == 0) {
+                $('.carLicenseMain ul li.active').html(
+                    '粤');//设置空白默认省
+                $('#provienceBox').show();
+                $('#textBox').hide();
+            }
+        })
+          
+
+        var rotateNum = 360; //旋转角度
+        $('.refresh').on('click', function () {
+            $('#img').css({
+                'transition': 'all 1s',
+                '-webkit-transition': 'all 1s',
+                /* Safari */
+                'transform': 'rotate(' + rotateNum + 'deg)',
+                '-ms-transform': 'rotate(' + rotateNum + 'deg)',
+                '-webkit-transform': 'rotate(' + rotateNum + 'deg)'
+            });
+            rotateNum = 360 + rotateNum;
+
+        });
+
+    })
+    //自定义键盘处理函数
+    function keyboard(num, self) {
+        var index = getIndex();
+        if (index <= num) {
+            if (index == num) {
+                $('.carLicenseMain ul li.active').html($(self).html());
+            } else {
+                $('.carLicenseMain ul li.active').html($(self).html()).removeClass('active').next().addClass(
+                    'active');
+            }
+            $('#textBox').show();
+            $('#provienceBox').hide();
+        }
+    }
+    //获取当前车牌数字索引
+    function getIndex() {
+        var index = 0;
+        $('.carLicenseMain ul li').each(function () {
+            var reg = new RegExp('active');
+            if (reg.test($(this).attr('class'))) {
+                index = $(this).index();
+            }
+        })
+        return index;
+    }
+
+</script>
+
+</html>
