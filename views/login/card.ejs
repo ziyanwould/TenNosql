@@ -129,7 +129,7 @@
                     <li>港</li>
                     <li>澳</li>
                     <li class="deleteBtn other">
-                        <img src="imgs/backDeleteImg.jpg" />
+                        <img src="/imgs/backDeleteImg.jpg" />
                     </li>
                 </ul>
             </div>
@@ -179,7 +179,7 @@
                     <li>N</li>
                     <li>M</li>
                     <li class="deleteBtn other">
-                        <img src="imgs/backDeleteImg.jpg" />
+                        <img src="/imgs/backDeleteImg.jpg" />
                     </li>
                 </ul>
             </div>
@@ -234,6 +234,8 @@
                         weui.alert('车牌号没有填写完整');//提示框
                     }else if(xny!=''&& chepaiShu!=8){
                         weui.alert('新能源车牌号没有填写完整');//提示框
+                    }else{
+                        window.location.href="/login/loginSuccess"
                     }
                 }
             });
