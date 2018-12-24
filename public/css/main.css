@@ -1,0 +1,770 @@
+/* 支付成功 开始 */
+
+html,
+body {
+    background-color: #fff;
+}
+
+.get {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.get .bg {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.get img {
+    width: 100%;
+    display: block;
+}
+
+.container {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    width: 6rem;
+    margin-left: -3rem;
+    text-align: center;
+}
+
+.container h3 {
+    font-size: 0.36rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.getTen {
+    display: block;
+    color: #ff6062;
+    font-size: 0.36rem;
+    margin-bottom: 0.3rem;
+}
+
+.cont {
+    width: 94%;
+    margin: 0 auto;
+    padding: 0.3rem 0.4rem;
+    color: #fff;
+    background-color: #429afa;
+}
+
+.contTop h4 {
+    float: left;
+    font-size: 0.34rem;
+    font-weight: normal;
+}
+
+.contTop {
+    height: 0.3rem;
+    line-height: 0.3rem;
+}
+
+.contTop .time {
+    text-align: bottom;
+    position: relative;
+    padding-top: 0.2rem
+}
+
+.contTop .time .num {
+    display: inline-block;
+    font-size: 0.6rem;
+    color: #fff;
+    margin-right: 0.1rem;
+}
+
+.contTop .time .h {
+    display: inline-block;
+    font-size: 0.24rem;
+    position: absolute;
+    top: 0.46rem;
+    left: 0.36rem;
+    color: #fff;
+    margin-left: 0.1rem;
+}
+
+.container .cont .car {
+    font-size: 0.24rem;
+    color: rgba(255, 255, 255, .6);
+    margin-top: 0.4rem;
+}
+
+.contBottom {
+    width: 100%;
+    position: relative;
+}
+
+.contBottom ul {
+    position: absolute;
+    top: -0.04rem;
+    left: 0;
+}
+
+.contBottom ul li {
+    width: 0.1rem;
+    height: 0.1rem;
+    margin-right: 0.1rem;
+    border-radius: 50%;
+    background-color: #eee;
+    float: right;
+}
+
+.container p {
+    width: 94%;
+    margin: 0 auto;
+    font-size: 0.22rem;
+    color: #adadad;
+    text-align: left;
+    background-color: #eee;
+    padding-left: 0.2rem;
+    height: 0.42rem;
+    line-height: 0.42rem;
+}
+
+.getCoupon a {
+    display: inline-block;
+    width: 6.4rem;
+    height: 0.88rem;
+    background-color: #ffcd35;
+    border-radius: 1rem;
+    position: absolute;
+    margin-left: 0.55rem;
+    bottom: -1.2rem;
+    left: -0.75rem;
+    text-align: center;
+    line-height: 0.88rem;
+    font-size: 0.34rem;
+    color: #805239;
+}
+
+.tel .num {
+    margin-left: 0.55rem;
+    border-radius: 1rem;
+    width: 6.4rem;
+    height: 0.88rem;
+    background-color: #fff;
+    position: absolute;
+    bottom: -3.5rem;
+    left: -0.75rem;
+    text-align: center;
+    font-size: 0.32rem;
+}
+
+.container h5 {
+    font-size: 0.28rem;
+    color: #fff;
+    margin-top: 2.2rem;
+}
+
+/* 支付成功 结束 */
+
+/*停车账单 */
+
+html,
+body {
+    width: 100%;
+    padding-bottom: 1.1rem;
+    /* background: pink; */
+    box-sizing: border-box;
+}
+
+.parking {
+    width: 100%;
+   
+    background-color: #429AFA;
+    padding-top: 0.8rem;
+    padding-bottom: 1.1rem;
+    font-family: "MT";
+}
+
+.example {
+    font-size: 0.4rem;
+    color: #fff;
+    padding-left: 0.5rem;
+    margin: -0.3rem 0 0.3rem 0;
+}
+
+.parkingInfo {
+    background-color: #fff;
+    width: 6.5rem;
+    margin: 0 auto;
+    border: 1px solid #fff;
+    border-radius: 0.1rem;
+    padding: 0.4rem 0.4rem 0.7rem 0.4rem;
+}
+
+.parkingInfo h3 {
+    color: #333;
+    font-weight: normal;
+    font-size: 0.5rem;
+    font-family: "微软雅黑";
+}
+
+.parkingInfo p {
+    color: #999;
+    font-size: 0.28rem;
+    line-height: 0.5rem;
+}
+
+.parkingInfo .parkingAdd p {
+ 
+    font-size: 0.3rem;
+  
+}
+.parkingInfo h6 {
+    color: #999;
+    font-weight: normal;
+    font-size: 0.24rem;
+}
+
+.parkingAdd {
+    margin-bottom: 0.5rem;
+    background-color: #f6f9f8;
+    margin: -0.42rem -0.42rem 0.32rem -0.42rem;
+    padding: 0.32rem 0.42rem 0.32rem 0.42rem;
+    border: 1px solid #f6f9f8;
+    border-radius: 0.1rem;
+}
+
+.parkingTime p,
+.money p {
+    margin-bottom: -0.4rem;
+    font-size: 0.28rem;
+    color: #999;
+}
+
+.parkingTime span,
+.money span {
+    font-size: 0.7rem;
+    color: #429AFA;
+    font-family: 'MT';
+}
+
+@font-face {
+    font-family: 'MT';
+    src: url('../font/DINOT-MEDIUM.OTF');
+    src: url('../font/DINOT-MEDIUM.OTF') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/DINOT-MEDIUM.OTF') format('woff'), /* Modern Browsers */
+    url('../font/DINOT-MEDIUM.OTF') format('truetype'), /* Safari, Android, iOS */
+    url('../font/DINOT-MEDIUM.OTF') format('svg');
+    /* Legacy iOS */
+}
+
+.money {
+    padding-bottom: 0.2rem;
+    border-bottom: 1px dashed #999;
+}
+
+.picture_l {
+    width: 0.5rem;
+    height: 0.5rem;
+    display: inline-block;
+}
+
+.picture_l img {
+    width: 100%;
+}
+
+.weixin .zhifu,
+.zhifubao .zhifu {
+    vertical-align: middle;
+    font-size: 0.3rem;
+    color: #333;
+}
+
+.picture_r {
+    display: block;
+    width: 0.5rem;
+    float: right;
+    margin-right: 0.1rem;
+    margin-top: 0.46rem;
+}
+
+.picture_r img {
+    display: block;
+    width: 100%;
+}
+
+.btn {
+    margin-top: 0.6rem;
+    width: 5.5rem;
+    height: 0.9rem;
+    background-color: #429AFA;
+    color: #fff;
+    border: 1px solid #429afa;
+    border-radius: 0.1rem;
+    text-align: center;
+    font-size: 0.32rem;
+    line-height: 0.9rem;
+}
+
+/* 停车账单 结束 */
+
+/* 输入车牌号 开始 */
+
+.Num {
+    width: 100%;
+    padding-bottom: -4rem;
+    position: fixed;
+    left: 0;right: 0;top: 0;bottom: 0;
+}
+
+.checked {
+    padding: 0.5rem 0.5rem 0.2rem;
+    margin: 0 auto;
+    background-color: #429AFA;
+}
+
+.checked p {
+    text-align: center;
+    color: #fff;
+    line-height: 0.5rem;
+    font-size: 0.48rem;
+   
+}
+
+.num .car {
+    padding-left: 0.3rem;
+    color: #666;
+    font-size: 0.3rem;
+    margin-top: 0.6rem;
+}
+
+.cardNum {
+    padding: 0.3rem 0.3rem 6rem 0.3rem;
+}
+
+.cardNum2 a input {
+    border: none;
+    font-size: 0.34rem;
+    margin: 0.2rem;
+    outline: 0;
+    width: 0.38rem;
+    text-align: center;
+   
+}
+
+.cardNum2 a {
+    background-color: #fff;
+    border: 1px solid #429afa;
+    border-radius: 0.05rem;
+    font-size: 0.34rem;
+    color: #333;
+    float: left;
+   /*  padding: 0.1rem 0; */
+    margin-right: 0.06rem;
+}
+
+
+.cardNum2 .plus {
+    color: #666;
+   display: block;
+    text-align: center;
+}
+
+
+.cardNum2 .power .sc{
+	display: inline-block;
+    padding-bottom: 0.1rem;
+        width: 0.8rem;
+    height: 0.43rem;
+    
+}
+
+
+@media only screen and (min-width: 361px){
+    .cardNum2 .power .new {
+        display: block;
+        font-size: 0.2rem;
+        margin: 0 0.01rem;
+        width: 0.74rem;
+        color: #666;
+     	text-align: center;
+     	
+    }
+    .cardNum2 .plus img{
+        width: 40%;
+    }
+}
+@media only screen and (min-width:320px) and (max-width:360px) {
+    .cardNum2 .power {
+        padding-bottom: 0.06rem;
+    }
+    
+    .cardNum2 a {
+        background-color: #fff;
+        border: 1px solid #429afa;
+        border-radius: 0.05rem;
+        font-size: 0.34rem;
+        color: #333;
+        float: left;
+        padding: 0.1rem 0;
+        margin-right: 0.04rem;
+    }
+    .cardNum2 .plus img{
+        width: 30%;
+    }
+    .cardNum2 .power .new {
+        display: block;
+        font-size: 0.12rem;
+        margin: 0 0.01rem;
+      
+        color: #666;
+     
+    }
+ }
+
+.on {
+    display: block;
+}
+/*.active{
+     font-size: 0.2rem; 
+}*/
+
+/* ..... */
+
+.refresh{
+    width: 50%;
+    margin: 0 auto;
+padding-bottom: 0.3rem;
+
+}
+.refresh a{
+    width: 0.33rem;
+    height: 0.33rem;
+
+}
+.refresh a img{
+    width: 100%;
+}
+.refresh span{
+    color: #429afa;
+    font-size: 0.32rem;
+    vertical-align: middle;
+  /*   margin-left: 6%; */
+}
+.next {
+    width: 90%;
+    height: 1rem;
+    line-height: 1rem;
+    background-color: #429AFA;
+    color: #fff;
+    font-size: 0.34rem;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #429AFA;
+    border-radius: 5px;
+   
+}
+
+/* 输入车牌号 结束*/
+
+/* card2 汉字选择区域 */
+
+
+input {
+    text-align: center;
+}
+
+.word {
+    display: none;
+    background-color: #ededed;
+    width: 100%;
+    padding: 0.2rem 0;
+    text-align: center;
+    margin-top: 0.4rem;
+    z-index: 99999999;
+}
+
+.cardNum2 {
+    padding: 0.3rem 0.1rem 1rem 0.1rem;
+}
+
+
+
+
+/* card3 字母选择区域 */
+
+.english {
+    background-color: #ededed;
+    width: 100%;
+    padding: 0.2rem 0;
+    text-align: center;
+    margin-top: 0.4rem;
+    z-index: 99999999;
+}
+
+.word .word1,.english .One
+ {
+    line-height: 0.4rem;
+    margin: 0.15rem 0;
+}
+
+.english .One a
+ {
+
+    width: 0.7rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0.2rem;
+    color: #333;
+    margin: 0 -0.13rem;
+    font-size: 0.32rem;
+    text-align: center;
+}
+
+.word .word1 a
+ {
+ 
+     line-height: 0.8rem;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0.2rem;
+    color: #333;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 -0.13rem;
+ 
+    font-size: 0.28rem;
+ text-align: center;
+}
+.word .deleteBtn img,.english .deleteBtn img{
+    width:66%;
+    display: inline-block;
+    margin-bottom: 0.1rem;
+} 
+
+
+
+
+
+/* card */
+#container{
+	width: 100%;
+	height: 100%;
+	/* padding-top: 50px; */
+}
+#carLicenseBox{
+/* 	width: 80%;
+
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	margin: 0 auto; */
+	padding-bottom: 20px;
+	overflow: hidden;
+	background-color: #ffffff;
+}
+
+
+@font-face {
+    font-family: 'MT';
+    src: url('../font/DINOT-MEDIUM.OTF');
+    src: url('../font/DINOT-MEDIUM.OTF') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/DINOT-MEDIUM.OTF') format('woff'), /* Modern Browsers */
+    url('../font/DINOT-MEDIUM.OTF') format('truetype'), /* Safari, Android, iOS */
+    url('../font/DINOT-MEDIUM.OTF') format('svg');
+    /* Legacy iOS */
+}
+
+#carLicenseBox .car {
+
+    color: #666;
+    font-size: 16px;
+	margin-top: 0.6rem;
+    padding: 20px 0 10px 20px;
+}
+#carLicenseBox .carLicenseTitle{
+	width: 100%;
+	
+	background-color: #478FF1;
+	text-align: center;
+	line-height: 100px;
+	color: white;
+	font-size: 34px;
+}
+#carLicenseBox .carLicenseMain{
+	width: 100%;
+	/* height: 160px; */
+	padding: 20px 2px 40px 2px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+}
+.refresh{
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.refresh a{
+	display: inline-block;
+    width: 20px;
+
+
+}
+.refresh a img{
+    width: 100%;
+}
+.refresh span{
+    color: #429afa;
+    font-size: 16px;
+    vertical-align: middle;
+  /*   margin-left: 6%; */
+}
+#carLicenseBox .carLicenseMain ul{
+	width: 100%;
+	height: 36px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	
+}
+#carLicenseBox .carLicenseMain ul li{
+	width: 40px;
+	height: 43px;
+    /* border: 1px solid #429afa; */
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+	text-align: center;
+	line-height: 43px;
+	float: left;
+	margin-right: 4px;
+	font-family: "MT";
+
+}
+#carLicenseBox .carLicenseMain ul li:last-of-type{
+	margin: 0;
+}
+#carLicenseBox .carLicenseMain ul li.active{
+	border: 1px solid #3578A4;
+}
+#carLicenseBox .carLicenseMain ul li.xinnengyuan{
+	background: url(../imgs/xinnengyuan.png) no-repeat center -3px;
+	background-size: 100% 100%;
+	border: 1px solid #CCC;
+}
+#carLicenseBox .submitBtn{
+	width: 80%;
+	height: 45px;
+	background-color: #478FF1;
+	border: none;
+	border-radius: 6px;
+	text-align: center;
+	line-height: 45px;
+	color: white;
+	font-size: 20px;
+	margin-left: 10%;
+}
+#keyboardBox{
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	z-index: 999;
+}
+#keyboardBox .provienceBox,#keyboardBox .textBox{
+	width: 100%;
+	background-color: #cfd4d8;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#keyboardBox .provienceBox ul,#keyboardBox .textBox ul{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 10px;
+}
+#keyboardBox .provienceBox ul:first-of-type, #keyboardBox .textBox ul:first-of-type{
+	margin-top: 0px;
+}
+#keyboardBox .provienceBox ul li,#keyboardBox .textBox ul li{
+	width: 35px;
+	height: 40px;
+	border-radius: 6px;
+	text-align: center;
+	line-height: 40px;
+	float: left;
+	background-color: #ffffff;
+	font-family: "MT";
+}
+#keyboardBox .textBox{
+	display: none;
+}
+#keyboardBox .provienceBox ul .changeContentBtn,#keyboardBox .provienceBox ul .deleteBtn,#keyboardBox .textBox ul .changeContentBtn,#keyboardBox .textBox ul .deleteBtn{
+	width: 40px;
+	height: 40px;
+	background-color: #ACB3BB;
+	text-align: center;
+	line-height: 40px;
+}
+#keyboardBox .provienceBox ul .deleteBtn img,#keyboardBox .textBox ul .deleteBtn img{
+	width: 23px;
+
+}
+@media only screen and (min-width: 361px){}
+@media only screen and (min-width:320px) and (max-width:360px){
+	#keyboardBox .provienceBox ul li,#keyboardBox .textBox ul li{
+		width: 30px;
+		height: 40px;
+		border-radius: 6px;
+		text-align: center;
+		line-height: 40px;
+		float: left;
+		background-color: #ffffff;
+		font-family: "MT";
+	}
+	#carLicenseBox .carLicenseTitle{
+		width: 100%;
+		
+		background-color: #478FF1;
+		text-align: center;
+		line-height: 80px;
+		color: white;
+		font-size: 30px;
+	}
+	#carLicenseBox .carLicenseMain{
+		width: 100%;
+		/* height: 160px; */
+		/* padding: 20px 2px 40px 2px; */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		
+	}
+	.refresh{
+		width: 60%;
+		margin: 0 auto;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+	.refresh a{
+		display: inline-block;
+		width: 20px;
+		vertical-align: middle;
+	
+	}
+	.refresh a img{
+		width: 100%;
+	}
+	.refresh span{
+		color: #429afa;
+		font-size: 16px;
+		vertical-align: middle;
+	  /*   margin-left: 6%; */
+	}
+}
+
+/*  */
+
+

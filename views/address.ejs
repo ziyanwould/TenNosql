@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <title>附近洗车机</title>
+    <link rel="stylesheet" href="/css/dropload.css">
+    <link rel="stylesheet" href="/css/jilu.css">
+    <link rel="stylesheet" href="https:at.alicdn.com/t/font_975764_3r2oc75uoi.css">
+</head>
+<body>
+<!-- <div class="header">
+    <h1>就当我是新闻页吧</h1>
+</div> -->
+<div class="content">
+    <div class="lists">
+        <!-- <div class="address">
+            <div class="left">
+             <img src="imgs/person.jpg" alt="图片">
+            </div>
+            <div class="middle">
+                <p class="name">中住71——南沙店</p>
+                <p class="detail">广东省广州市新港西路135号 中山大学国家科技园A座803-812</p>
+            </div>
+            <a class="right" href="https://apis.map.qq.com/tools/poimarker?type=0&marker=coord:23.092908,113.290951&key=KSIBZ-GCEKI-JZEG6-5KLLT-TD2KK-O4BGI&referer=myapp" >
+              <span>1.8Km</span>
+              <p><i class="iconfont  icon-daohang"></i></p>
+            </a>
+        </div> -->
+    </div>
+</div>
+<!-- <div class="footer">
+    <a href="#1" class="item">测试菜单</a>
+    <a href="#2" class="item">只做展示</a>
+    <a href="#3" class="item">无功能</a>
+    <a href="#4" class="item">不用点</a>
+</div> -->
+<!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
+<script src="/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/dropload.js"></script>
+<script>
+$(function(){
+    // 页数
+    var page = 0;
+    // 每页展示10个
+    var size = 9;
+
+    // dropload
+    $('.content').dropload({
+        scrollArea : window,
+        domUp : {
+            domClass   : 'dropload-up',
+            domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
+            domUpdate  : '<div class="dropload-update">↑释放更新</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>正在加载中...</div>'
+        },
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>正在加载中..</div>',
+            domNoData  : '<div class="dropload-noData">已经全部加载完成</div>'
+        },
+        loadUpFn : function(me){
+            $.ajax({
+                type: 'GET',
+                url: 'json/update.json',
+                dataType: 'json',
+                success: function(data){
+                    var result = '';
+                    let jingdu ='113.290951',//经度
+                        weidu ='23.092908';//维度
+                    for(var i = 0; i < data.lists.length; i++){
+                        result +=   
+                                    `<div class="address">
+                                        <div class="left">
+                                        <img src="${data.lists[i].pic}" alt="图片">
+                                        </div>
+                                        <div class="middle">
+                                            <p class="name">${data.lists[i].title}</p>
+                                            <p class="detail">广东省广州市新港西路135号 中山大学国家科技园A座803-812</p>
+                                        </div>
+                                        <a class="right" href="https://apis.map.qq.com/tools/poimarker?type=0&marker=coord:${weidu},${jingdu}&key=KSIBZ-GCEKI-JZEG6-5KLLT-TD2KK-O4BGI&referer=myapp" >
+                                        <span>1.8${i}Km</span>
+                                        <p><i class="iconfont  icon-daohang"></i></p>
+                                        </a>
+                                    </div>`
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        $('.lists').html(result);
+                        // 每次数据加载完，必须重置
+                        me.resetload();
+                        // 重置页数，重新获取loadDownFn的数据
+                        page = 0;
+                        // 解锁loadDownFn里锁定的情况
+                        me.unlock();
+                        me.noData(false);
+                    },1000);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    me.resetload();
+                }
+            });
+        },
+        loadDownFn : function(me){
+            page++;
+            // 拼接HTML
+            var result = '';
+            $.ajax({
+                type: 'GET',
+                url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
+                dataType: 'json',
+                success: function(data){
+                    var arrLen = data.length;
+                    var result = '';
+                    let jingdu ='113.290951',//经度
+                        weidu ='23.092908';//维度
+                    if(arrLen > 0){
+                        for(var i=0; i<arrLen; i++){
+                            // result +=   '<a class="item opacity" href="'+data[i].link+'">'
+                            //                 +'<img src="'+data[i].pic+'" alt="">'
+                            //                 +'<h3>'+data[i].title+'</h3>'
+                            //                 +'<span class="date">'+data[i].date+'</span>'
+                            //             +'</a>';
+
+                            result += `<div class="address">
+                                        <div class="left">
+                                        <img src="${data[i].pic}" alt="图片">
+                                        </div>
+                                        <div class="middle">
+                                            <p class="name">${data[i].title}</p>
+                                            <p class="detail">广东省广州市新港西路135号 中山大学国家科技园A座803-812</p>
+                                        </div>
+                                        <a class="right" href="https://apis.map.qq.com/tools/poimarker?type=0&marker=coord:${weidu},${jingdu}&key=KSIBZ-GCEKI-JZEG6-5KLLT-TD2KK-O4BGI&referer=myapp" >
+                                        <span>1.8${i}Km</span>
+                                        <p><i class="iconfont  icon-daohang"></i></p>
+                                        </a>
+                                    </div>`
+                        }
+                    // 如果没有数据
+                    }else{
+                        // 锁定
+                        me.lock();
+                        // 无数据
+                        me.noData();
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        // 插入数据到页面，放到最后面
+                        $('.lists').append(result);
+                        // 每次数据插入，必须重置
+                        me.resetload();
+                    },1000);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    me.resetload();
+                }
+            });
+        },
+        threshold : 50
+    });
+});
+</script>
+</body>
+</html>

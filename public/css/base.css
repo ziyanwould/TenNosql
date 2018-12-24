@@ -1,0 +1,67 @@
+
+
+* { margin: 0;padding: 0;outline: none;}
+body,div, p, a,ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, select, textarea, button, th, td{  
+    padding: 0; margin: 0; 
+     font-family:"";
+    box-sizing: border-box; }  
+body {background-color: #fff; font-family: "MT"; color: #333333;
+     /*min-height: 579px !important; */-webkit-font-smoothing: antialiased;}
+ul,li { list-style: none;}
+img { border:none; vertical-align: middle;}
+a { cursor: pointer; color: inherit;display: inline-block;text-decoration: none;}
+ul { list-style-type: none;}
+.clearfix { *zoom:1; }/*清除浮动*/
+.clearfix:after {content:""; display:table; height:0; visibility:hidden; clear:both; }
+.fl { float: left;}/*向左浮动*/
+.fr { float: right;}/*向右浮动*/
+.box { box-sizing: border-box; -webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+* { touch-action: none; }
+
+
+.red{
+	color: #fe7a31;
+}
+.blue{
+	color: #4F88F1;
+}
+.fl{
+	display: block;
+	float: left;
+}
+.fr{
+	display: block;
+	float: right;
+}
+.container{
+	width: 100%;
+	height: 100%;
+}
+/*一像素边框*/
+.lineRow{
+	width: 100%;
+	height: 0px;
+	border-bottom: 1px solid #cccccc;
+	transform: scaleY(0.5);
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+.lineCol{
+	width: 0px;
+	height: 60%;
+	border-right: 1px solid #cccccc;
+	transform: scaleX(0.5);
+	position: absolute;
+	top: 20%;
+	right: 0px;
+}
+.lineRow-8{
+	width: 90%;
+	height: 0px;
+	border-bottom: 1px solid #cccccc;
+	transform: scaleY(0.5);
+	position: absolute;
+	top: 0px;
+	left: 5%;
+}
