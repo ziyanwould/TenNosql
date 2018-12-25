@@ -1,5 +1,5 @@
 let MongoClient=require('mongodb').MongoClient;
-let DbUrl='mongodb://114.215.86.207:27017/productmanage'; /*连接数据库*/
+let DbUrl='mongodb://114.215.86.207:27017/PublicHao'; /*连接数据库*/
 let ObjectID = require('mongodb').ObjectID;/**获取到里面的顺序ID */
 
 function _connetDb(callback){

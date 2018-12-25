@@ -29,6 +29,30 @@ app.set('view engine','ejs');
 //配置public目录为我们的静态目录
 app.use(express.static('public'));
 
+/*权限判断*/
+app.use(function(req,res,next){
+    console.log(req.url);
+    //next();
+    if(req.url=='/login/delu' || req.url=='/login/doLogin' || req.url=='/'){
+        next();
+
+    }else{
+
+        if(req.session.userinfo&&req.session.userinfo.username!=''){   /*判断有没有登录*/
+
+            //app.locals  全局
+            //
+            //req.app.locals  /*请求的全局*/
+
+
+            req.app.locals['userinfo']=req.session.userinfo;   /*配置全局变量  可以在任何模板里面使用*/
+            next();
+        }else{
+            res.redirect('/login/delu')
+        }
+    }
+
+})
 
 app.use('/che',che);
 app.use('/login',login);
@@ -37,4 +61,4 @@ app.use('/',index);
 app.get('*',(req,res)=>{
     res.render('404');
 })
-app.listen(2019)
+app.listen(2019,'192.168.0.102')
