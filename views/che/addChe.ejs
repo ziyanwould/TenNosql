@@ -197,7 +197,40 @@
                     }else if(s=='粤555555'){
                         weui.alert('车牌号已被其他账号绑定！');//提示框
                     }else{
-                        window.location.href="/che"
+
+                        $.ajax({
+                            type:"post",          // 请求类型
+                            url:"/che/aDche",    // 请求URL
+                            data:{
+                                'chepai':s
+                            },                     // 请求参数 即是 在Servlet中 request.getParement();可以得到的字符串
+                                                   // 数据返回类型
+                            success:function(result){    // 成功返回的结果(响应)
+                                console.log(result);
+                                if(result=='该车牌已经被添加'){
+
+                                    var loading = weui.loading('已经添加过！');
+                                        setTimeout(function () {
+                                            loading.hide();
+                                        }, 3000);
+
+                                }else{
+                                    setTimeout(()=>{
+                                        window.location.href="/che"
+                                    },1500)
+                                    weui.toast('添加成功', {
+                                        duration: 3000,
+                                        className: "bears"
+                                    });
+                                }
+                              
+                               
+                              
+                            }
+                        });
+                        
+                           
+                        
                     }
                 }
             });

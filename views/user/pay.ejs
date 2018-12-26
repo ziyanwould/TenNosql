@@ -34,7 +34,7 @@
                     </div>
         
                     <div class="next">
-                        <a href="/user/yue" class="weui-btn lan">下一步</a>
+                        <a href="javascript:;" class="weui-btn lan">下一步</a>
                     </div>
         </div>
         <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -45,6 +45,34 @@
             //失败的自动获取
             var oInp = $('#pay')
              oInp.focus();
+
+             $('.lan').click(()=>{
+                 let value = $('#pay').val();
+                // console.log('value',value);
+                $.ajax({
+                    type:"post",          // 请求类型
+                    url:"/user/price",    // 请求URL
+                    data:{
+                        'price':value
+                    },                     // 请求参数 即是 在Servlet中 request.getParement();可以得到的字符串
+                                           // 数据返回类型
+                    success:function(result){    // 成功返回的结果(响应)
+                        console.log(result);
+                        if(result=='成功'){
+                            weui.toast('充值成功', {
+                                duration: 3000,
+                                className: "bears"
+                            });
+
+                            setTimeout(function(){
+                                javascript :history.back(-1)
+                            },1500)
+                        }
+                     
+
+                    }
+                });
+             })
      
         })
            

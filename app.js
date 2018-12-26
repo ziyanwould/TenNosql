@@ -44,7 +44,7 @@ app.use(function(req,res,next){
             //
             //req.app.locals  /*请求的全局*/
 
-
+           
             req.app.locals['userinfo']=req.session.userinfo;   /*配置全局变量  可以在任何模板里面使用*/
             next();
         }else{

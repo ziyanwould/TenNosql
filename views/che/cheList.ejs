@@ -20,33 +20,17 @@
         <div class="page">
 
          <div class="count">
-             
+             <%for(let i in list){%>
                 <div class="child">
                         <div class="left">
-                            粤CME006
+                          <%=list[i].che%>
                         </div>
                         <div class="right">
-                                <i class="iconfont  icon-picture-delet"></i>
+                               <i class="iconfont  icon-picture-delet" data-id="<%=list[i]._id%>"></i>
                         </div>
                     </div>
-        
-                    <div class="child">
-                            <div class="left">
-                            粤CME006
-                            </div>
-                            <div class="right">
-                                <i class="iconfont  icon-picture-delet"></i>
-                        </div>
-                        </div>
-        
-                    <div class="child">
-                            <div class="left">
-                            粤CME006
-                            </div>
-                            <div class="right">
-                                <i class="iconfont  icon-picture-delet"></i>
-                        </div>
-                    </div>
+                    <% } %>
+                
                            
          </div>
         
@@ -62,11 +46,17 @@
 
           $('.iconfont').click(function(){
               var that = $(this);
+              var datas = that.data('id');
               weui.confirm('该操作不可撤回', function () {
                     console.log('yes');
                     that.closest('.child').slideUp(500,function(){
                         $(this).remove()
                     });
+
+                    $.ajax({url:"/che/cheDelte?id="+datas,success:function(result){
+                        console.log('result',result);
+                    }});
+
                 }, function () {
                     console.log('no');
                 }, {
