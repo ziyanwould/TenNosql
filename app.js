@@ -22,6 +22,7 @@ let login =require('./routes/login.js');
 let che =require('./routes/che.js');
 let index =require('./routes/index.js');
 let user =require('./routes/user.js')
+let goods = require('./routes/goods');
 
 //使用ejs模板引擎 默认找views这个目录
 app.set('view engine','ejs');
@@ -57,6 +58,7 @@ app.use(function(req,res,next){
 app.use('/che',che);
 app.use('/login',login);
 app.use('/user',user);
+app.use('/goods', goods);
 app.use('/',index);
 app.get('*',(req,res)=>{
     res.render('404');

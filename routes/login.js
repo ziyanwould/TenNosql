@@ -34,8 +34,22 @@ router.post('/doLogin',function(req,res){
         if(data.length>0){
             console.log('登录成功');
             //保存用户信息
+            console.log("登录次数",data[0].number)
             req.session.userinfo=data[0];
-            res.redirect('/user');  /*登录成功跳转到商品列表*/
+            if(data[0].number==0 || data[0].number==undefined){
+                res.redirect('/login'); 
+            }else{
+                DB.upDate('user',{"_id":new DB.ObjectID(req.session.userinfo._id)},{
+                   
+                    number:(parseInt(data[0].number)+1)
+                },(err,data)=>{
+                    if(!err){
+                        console.log("用户信息更新")
+                    }
+                })
+                res.redirect('/user');  /*登录成功跳转到用户中心*/
+            }
+           
         }else{
             //console.log('登录失败');
             res.send("<script>alert('登录失败');location.href='/admin/login'</script>");
@@ -77,6 +91,57 @@ router.get('/loginSuccess',function(req,res){
 router.get('/delu',function(req,res){
     res.render('login/delu');
 
+})
+
+router.post('/chaPhone',(req,res)=>{
+    let phone  =req.body.phone;
+    console.log("phone",phone)
+    DB.find('user',{phone:phone},(err,data)=>{
+       // console.log("phone信息",data)
+       if(data.length>0){
+           res.send("已存在")
+       }else{
+           DB.upDate('user',{"_id":new DB.ObjectID(req.session.userinfo._id)},{phone:phone},(err,data)=>{
+            if(!err){
+               console.log("添加成功")
+            }  
+           })
+           res.send("未添加")
+       }
+    })
+})
+
+
+router.post('/adduser',(req,res)=>{
+    let mess = req.body;
+    console.log("mess",mess)
+    DB.find('che',{che:mess.che},(err,data)=>{
+        if(data.length>0){
+            res.send('车牌已存在')
+        }else{
+            req.app.locals['userinfo.name']=mess.name
+            DB.upDate('user',{"_id":new DB.ObjectID(req.session.userinfo._id)},{
+                name:mess.name,
+                sex:mess.sex,
+                number:1
+            },(err,data)=>{
+                if(!err){
+                    console.log("用户信息更新")
+                }
+            })
+
+            DB.add('che',{
+                che:mess.che,
+                username:req.session.userinfo.username
+            },(err,data)=>{
+                if(!err){
+                    console.log("增加车牌成功")
+                }
+            })
+
+            res.send("更新完毕")
+        }
+    })
 })
 
 module.exports = router;   /*暴露这个 router模块*/

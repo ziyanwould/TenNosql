@@ -212,7 +212,7 @@
         //提交表单
         $('#submitBtn').click(function(){
             var name =  $('.name').val();
-            var sex = $('.selected').closest('div').find('.user-type').html();
+            var sex = $('.selected').closest('span').find('.user-type').html();
             var xny = $('.carLicenseMain ul  li:last').html();
             var chepaiShu = 0;
             var s = ''//车牌号
@@ -235,7 +235,34 @@
                     }else if(xny!=''&& chepaiShu!=8){
                         weui.alert('新能源车牌号没有填写完整');//提示框
                     }else{
-                        window.location.href="/login/loginSuccess"
+
+                        $.ajax({
+                            type:"post",          // 请求类型
+                            url:"/login/adduser",    // 请求URL
+                            data:{
+                                'name':name,
+                                "sex":sex,
+                                "che":s
+                            },                     // 请求参数 即是 在Servlet中 request.getParement();可以得到的字符串
+                                                   // 数据返回类型
+                            success:function(result){    // 成功返回的结果(响应)
+                                console.log(result);
+                                if(result=='车牌已存在'){
+
+                                    var loading = weui.loading('车牌已被绑定过');
+                                        setTimeout(function () {
+                                            loading.hide();
+                                        }, 3000);
+
+                                }else{
+                                     window.location.href="/login/loginSuccess"
+                                }
+                 
+                               
+                              
+                            }
+                        });
+                       
                     }
                 }
             });

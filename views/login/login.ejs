@@ -13,6 +13,11 @@
         <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
         <link rel="stylesheet" href="/css/login.css">
     </head>
+    <style>
+    .lanse{
+        background:#31709A;
+    }
+    </style>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
@@ -55,6 +60,7 @@
 
          
           let pandu = false;
+          let yzms = 0;
           
            $(".dx").click(()=>{
                 var phone = jQuery(".ipone").val(),
@@ -91,14 +97,49 @@
                     weui.alert("请输入有效的手机号码！");
                 }else if(!myreg.test(phone)){
                     weui.alert("请输入有效的手机号码！");
-                }else if(phone=='18776007488'){
-                    weui.alert("该手机号码已经被绑定！");
                 }else if(dx== ''){
                     weui.alert("短信验证码不能为空！");
-                }else if(dx!=123456){
+                }else if(dx!=yzms){
                     weui.alert("短信验证码错误！");
                 }else{
-                    window.location.href="/login/card"
+                 
+
+
+                    $.ajax({
+                        type:"post",          // 请求类型
+                        url:"/login/chaPhone",    // 请求URL
+                        data:{
+                            'phone':phone
+                        },                     // 请求参数 即是 在Servlet中 request.getParement();可以得到的字符串
+                                               // 数据返回类型
+                        success:function(result){
+                                               // 成功返回的结果(响应)
+
+                            console.log(result);
+                            if(result=='已存在'){
+                                weui.alert("该号码已经被其他绑定！");
+                                // var loading = weui.loading('已经添加过！');
+                                //     setTimeout(function () {
+                                //         loading.hide();
+                                //     }, 3000);
+
+                             }else{
+                                window.location.href="/login/card"
+                             }
+                             //else{
+                            //     setTimeout(()=>{
+                            //         window.location.href="/che"
+                            //     },1500)
+                            //     weui.toast('添加成功', {
+                            //         duration: 3000,
+                            //         className: "bears"
+                            //     });
+                            // }
+                          
+                           
+                          
+                        }
+                    });
                 }
 
               
@@ -125,6 +166,21 @@
                 time--;
             }
             }, 1000);
+
+                //随机数
+                var Num="";
+                for(var i=0;i<6;i++)
+                {
+                Num+=Math.floor(Math.random()*10);
+                }
+                yzms=Num;
+                weui.topTips(`您的验证码为：${Num}`, {
+                    duration: 1000*20,
+                    className: "lanse",
+                    callback: function callback() {
+                        console.log('close');
+                    }
+                });
             }
         </script> 
     </body>

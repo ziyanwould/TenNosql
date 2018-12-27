@@ -15,7 +15,17 @@ router.use(bodyParser.json());
 
 router.get('/',function(req,res){
     
-    res.render('user/user');
+    let id = req.session.userinfo._id;
+    DB.find('user',{"_id":new DB.ObjectID(id)},(err,data)=>{
+
+        //console.log(data);
+        res.render('user/user',{
+            name:data[0].name
+        });
+
+      })
+    
+    //res.render('user/user');
 
 })
 

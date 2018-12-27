@@ -14,7 +14,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
 router.get('/',function(req,res){
-     console.log('req.session',req.session)
+     //console.log('req.session',req.session)
      let saixun = 
     DB.find('che',{"username":req.session.userinfo.username},(err,data)=>{
 
