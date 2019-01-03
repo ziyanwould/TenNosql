@@ -63,4 +63,4 @@ app.use('/',index);
 app.get('*',(req,res)=>{
     res.render('404');
 })
-app.listen(2019,'192.168.0.102')
+app.listen(2019)
