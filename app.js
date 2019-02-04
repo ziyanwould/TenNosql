@@ -5,6 +5,7 @@ const app = express();
 var path = require('path');
 var fs = require('fs');
 
+
 //使用nodejs自带的http、https模块
 var http = require('http');
 var https = require('https');
@@ -82,8 +83,8 @@ var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
  
 //可以分别设置http、https的访问端口号
-var PORT = 8000;
-var SSLPORT = 8001;
+var PORT = 8001;
+var SSLPORT = 8000;
  
 //创建http服务器
 httpServer.listen(PORT, function() {
