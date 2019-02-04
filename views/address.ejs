@@ -5,7 +5,7 @@
     <title>附近洗车机</title>
     <link rel="stylesheet" href="/css/dropload.css">
     <link rel="stylesheet" href="/css/jilu.css">
-    <link rel="stylesheet" href="https:at.alicdn.com/t/font_975764_3r2oc75uoi.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_975764_3r2oc75uoi.css">
 </head>
 <body>
 <!-- <div class="header">
@@ -109,7 +109,8 @@ $(function(){
             var result = '';
             $.ajax({
                 type: 'GET',
-                url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
+                // url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
+                url: '/api/list?'+page+'&size='+size,
                 dataType: 'json',
                 success: function(data){
                     var arrLen = data.length;
